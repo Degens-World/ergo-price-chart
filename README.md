@@ -1,5 +1,9 @@
 # ERG Price Chart
 
+## Live Demo
+
+**[https://ad-ergo-price-chart-1775098010966.vercel.app](https://ad-ergo-price-chart-1775098010966.vercel.app)**
+
 Live Ergo (ERG) market dashboard with historical price chart, powered by CoinGecko public API.
 
 ## Features

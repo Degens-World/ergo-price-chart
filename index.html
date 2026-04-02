@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERG Price Chart — Ergo Live Market</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="sigma">Σ</span>
+      <span class="title">ERG Price Chart</span>
+    </div>
+    <div class="tagline">Live Ergo market data via CoinGecko</div>
+  </header>
+
+  <main>
+    <section id="stats-bar">
+      <div class="stat-card" id="stat-price">
+        <div class="stat-label">ERG Price</div>
+        <div class="stat-value" id="val-price">—</div>
+        <div class="stat-change" id="val-change-24h">—</div>
+      </div>
+      <div class="stat-card" id="stat-mcap">
+        <div class="stat-label">Market Cap</div>
+        <div class="stat-value" id="val-mcap">—</div>
+      </div>
+      <div class="stat-card" id="stat-vol">
+        <div class="stat-label">24h Volume</div>
+        <div class="stat-value" id="val-vol">—</div>
+      </div>
+      <div class="stat-card" id="stat-ath">
+        <div class="stat-label">All-Time High</div>
+        <div class="stat-value" id="val-ath">—</div>
+        <div class="stat-sub" id="val-ath-date">—</div>
+      </div>
+      <div class="stat-card" id="stat-rank">
+        <div class="stat-label">Market Rank</div>
+        <div class="stat-value" id="val-rank">—</div>
+      </div>
+    </section>
+
+    <section id="chart-section">
+      <div class="chart-controls">
+        <span class="chart-title">Price History (USD)</span>
+        <div class="range-buttons">
+          <button class="range-btn" data-days="7">7D</button>
+          <button class="range-btn active" data-days="30">30D</button>
+          <button class="range-btn" data-days="90">90D</button>
+          <button class="range-btn" data-days="365">1Y</button>
+        </div>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="priceChart"></canvas>
+        <div id="chart-loading" class="loading-overlay">
+          <div class="spinner"></div>
+          <span>Loading chart data…</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="extra-stats">
+      <div class="extra-card">
+        <div class="extra-label">7D Change</div>
+        <div class="extra-value" id="val-change-7d">—</div>
+      </div>
+      <div class="extra-card">
+        <div class="extra-label">30D Change</div>
+        <div class="extra-value" id="val-change-30d">—</div>
+      </div>
+      <div class="extra-card">
+        <div class="extra-label">Circulating Supply</div>
+        <div class="extra-value" id="val-supply">—</div>
+      </div>
+      <div class="extra-card">
+        <div class="extra-label">Max Supply</div>
+        <div class="extra-value" id="val-max-supply">—</div>
+      </div>
+    </section>
+
+    <div id="error-msg" class="error hidden"></div>
+  </main>
+
+  <footer>
+    Data via <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a> public API &bull;
+    Built for <a href="https://ergoplatform.org" target="_blank" rel="noopener">Ergo Platform</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
